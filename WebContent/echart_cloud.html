@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:400px"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: "http://echarts.baidu.com/build/dist"
+            }
+        });
+        
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/wordCloud' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (re) {
+                // 基于准备好的dom，初始化echarts图表
+                 wordCloud(re);
+     }    
+        );
+		function wordCloud(re){
+		var 
+option = {
+    title: {
+    },
+    tooltip: {
+        show: false
+    },
+	color:['#ff7f7f','#2f61eb','#aaff80','#ff9524','#ffe4a3','#a3bbff','#83b88d','#a3e6ff'],
+    series: [{
+        name: '',
+        type: 'wordCloud',
+        size: ['100%', '100%'],
+        textRotation : [0, 0, 0, 0],
+        rotationRange : [0, 0, 0, 0],
+        textPadding: 0,
+        autoSize: {
+            enable: true,
+            minSize: 14
+        },
+        data: [ {name: "Sam S Club",value: 10000,itemStyle: { normal: { color: 'black'}}},
+            {name: "Macys",value: 6181,itemStyle:{normal: { color: '#F00' } }},
+            {name: "Amy Schumer",value: 4386,itemStyle: {normal: {color: '#0F0' }}},
+            { name: "Jurassic World",value: 4055,itemStyle: {normal: {color: '#FF0'}}}]
+    }]
+}; 
+ var myChart = re.init(document.getElementById("main"));
+	myChart.setOption(option);	
+		}
+    </script>
+</body>
