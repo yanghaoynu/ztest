@@ -4,7 +4,8 @@
     <title>ECharts</title>
 </head>
 <body>
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <!-- //中文注释测试 -->
+    //
     <div id="main" style="height:400px"></div>
     <!-- ECharts单文件引入 -->
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
@@ -18,6 +19,7 @@
         
         // 使用
         require(
+            //
             [
                 'echarts',
                 'echarts/chart/wordCloud' // 使用柱状图就加载bar模块，按需加载
@@ -25,6 +27,7 @@
             function (re) {
                 // 基于准备好的dom，初始化echarts图表
                  wordCloud(re);
+                 //中文注释测试
      }    
         );
 		function wordCloud(re){
