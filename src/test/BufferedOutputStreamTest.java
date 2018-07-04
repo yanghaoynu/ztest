@@ -30,5 +30,7 @@ public class BufferedOutputStreamTest {
 		System.out.println("你好");
 		System.out.println("你好，我是杨昊，请问你是谁啊");
 		System.out.println("你好。");
+		String testS = "你好你好";
+		System.out.println("testS");
 	}
 }
